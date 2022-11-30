@@ -42,6 +42,19 @@ def convert_roman_to_arabic(roman: str) -> str:
 
 
 def check_roman_number(roman: str) -> bool:
+    """
+    La funzione controlla tutti gli elementi presenti nella stringa da convertire.
+    Se uno di questi elementi non corrisponde ad uno dei simboli che fanno parte dei
+    numeri romani viene sollevata l'eccezione ValueError e si ritorna False (la verifica fallisce).
+    Solo se tutti gli elementi sono validi ritorno True.
+    :param roman:
+    :return:
+    """
+    roman_bumbers = ["I", "V", "X", "L", "C", "D", "M"]
+    for el in roman:
+        if not(el in roman_bumbers):
+            raise ValueError("Typed value is not a roman number!")
+            return False
     return True
 
 
